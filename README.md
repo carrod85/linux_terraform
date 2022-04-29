@@ -44,16 +44,19 @@ There is the possibility of using free account, even though you have to insert c
         default root user is used.(didn't create an user in aws)
 
     . Implement connexion with api provider
-      - Hit terraform init to see that connection is succesful and to download all the necessary plugins to interact with the API
+      - Hit <terraform init> to see that connection is succesful and to download all the necessary plugins to interact with the API
       - You can track your changes with <terraform plan> command before actually running it.
 
     . Create a virtual server instance. Selecting the os and the type of instance(power assigned to that vm) I select t2.micro type since it is free:) Ubuntu distribution used.
 
     . Terraform as well as ansible track changes on the code and only apply differences. A difference though, between them is that with ansible as we said before the code is applied from top to bottom but in terraform it is 'intelligent enough' in many cases to relate tasks that are depending on others, so run them in correct order.
-     . To delete instances you can do either terraform destroy to destroy the whole infrastructure or just delete or uncomment the part of code we don't want anymore.
+    . To delete instances you can do either terraform destroy to destroy the whole infrastructure or just delete or uncomment the part of code we don't want anymore.
+     
+# Small implementation of web server
+
 Example grabbed from https://github.com/Sanjeev-Thiyagarajan/Terraform-Crash-Course/blob/master/main.tf
 
-     . 1. Creation of VPC. virtual private cloud.
+       1. Creation of VPC. virtual private cloud.
        2. Create Internet Gateway
        3. Create Custom Route Table
        4. Create a Subnet
